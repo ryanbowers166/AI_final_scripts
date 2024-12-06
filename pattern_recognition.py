@@ -32,7 +32,7 @@ def Q8_17():
     D = max(D_path1, D_path2)
     print('D = ', D)
 
-    test2 = .5*.85*.7*.85*.7*.15
+    #test2 = .5*.85*.7*.85*.7*.15
     #print('test2 = ', test2)
 
 #Q8()
