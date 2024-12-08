@@ -70,9 +70,7 @@ def Q6_3(P_C, P_D, P_S, P_M, P_R,P_A,P_P):
 
 
 def Q6_4(P_C, P_D, P_S, P_M, P_R,P_A,P_P):
-
     # What is P(C=Present | R=Effective, A = Not Triggered, M = Absent)?
-
     # Need to calculate numerator/denominator.
     # Numerator = P(+C, R=Eff, A=NT, M=Abs, D, P, S) = sum_P sum_D sum_S [(+C|P, A=Not Triggered, R=Effective)  *  P(D)  *  P(A=NotTriggered|M=Absent)  *  P(M=Absent|D,S)  *  P(R=Effective|D,M=Absent)  *  P(P|M=Abs)  *  P(S)]
     # Denominator = P(C, R=Effective, A=NT, M=Abs, D,P,S)

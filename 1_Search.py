@@ -1,4 +1,5 @@
 import numpy as np
+
 def Q1_1():
      nodes = ['E1','E2','E3','E4','M1','M2',"M3","M4","M5",'J1','J2','J3','S1','S2','S3','S4']
 
@@ -25,14 +26,18 @@ def Q1_1():
               print(f'{h_n} <= {cost}+ {h_nprime}')
               return False
 
+     consistent = True
      for node_a in nodes:
           for node_b in nodes:
                if (node_a,node_b) in costs:
                     check = check_consistency(heuristic,node_a,node_b,costs[(node_a,node_b)])
-                    print(node_a,node_b,check)
                     if not check:
-                         print('#### H IS NOT CONSISTENT ####')
+                         consistent = False
+                         print(node_a, node_b, check)
                          break
+     if consistent: print('Q 1.1: H is consistent for all parent-child node pairs\n')
+     else: print('Q 1.1: H IS NOT CONSISTENT\n')
+
 
 def Q1_3():
      nodes = ['E1', 'E2', 'E3', 'E4', 'M1', 'M2', "M3", "M4", "M5", 'J1', 'J2', 'J3', 'S1', 'S2', 'S3', 'S4']
@@ -47,12 +52,15 @@ def Q1_3():
                   'J2':30,'J3':34,'J1':39,
                   'S4':44,'S1':47,'S2':49,'S3':51}
 
+     print('#### Q 1.3 ####')
      for node in nodes:
           if node in true_cost:
                check = 30 <= true_cost[node]
-               print(node,check)
-               if not check: print('####NOT ADMISSIBLE FOR',node)
+               #print(node,check)
+               if check:
+                   print('H is admissible for',node)
+               if not check: print('H IS NOT ADMISSIBLE FOR',node)
+     print('#### Q 1.3 complete ####')
 
-
-Q1_1()
-#Q1_3()
+#Q1_1()
+Q1_3()

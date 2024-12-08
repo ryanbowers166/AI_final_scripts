@@ -2,9 +2,9 @@ import numpy as np
 
 
 def Q8():
-    min_prev = 13
-    A_i = 25
-    B_j = 16
+    min_prev = 17
+    A_i = 20
+    B_j = 19
 
     D_i_j = abs(A_i - B_j) + min_prev
     print(D_i_j)
@@ -35,7 +35,7 @@ def Q8_17():
     #test2 = .5*.85*.7*.85*.7*.15
     #print('test2 = ', test2)
 
-#Q8()
-Q8_17()
+Q8()
+#Q8_17()
 # print(0.5*.15*.6*.15)
 # print(.5*.85*.3*.15)

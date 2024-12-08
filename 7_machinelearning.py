@@ -34,6 +34,7 @@ def Q7_1():
 def Q7_7():
     def bic(p,n,l):  #Q7.7)
         return p*np.log(n)-2*l
+
     n = 10000
     bic_A = bic(3,n,-12000)
     bic_B = bic(6,n,-11500)
@@ -54,5 +55,6 @@ def Q7_10():
     entropy = -(p_feeding*np.log2(p_feeding)) - (p_migrating*np.log2(p_migrating)) - (p_resting*np.log2(p_resting))
     print(entropy)
 
-Q7_1()
-#Q7_10()
+#Q7_1()
+#Q7_7()
+Q7_10()
