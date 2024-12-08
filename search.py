@@ -2,14 +2,9 @@ import numpy as np
 def Q1_1():
      nodes = ['E1','E2','E3','E4','M1','M2',"M3","M4","M5",'J1','J2','J3','S1','S2','S3','S4']
 
-     # heuristic = {'E1':30, 'E2':30, 'E3':30, 'E4':30,
-     #      'M1':20, 'M2': 20, 'M3': 20, 'M4': 20, 'M5': 20,
-     #      'J1':10, 'J2': 10, 'J3': 10,
-     #      'S1':0, 'S2':0, 'S3':0, 'S4':0}
-
      heuristic = {'E1':30, 'E2':30, 'E3':30, 'E4':30,
           'M1':20, 'M2': 20, 'M3': 20, 'M4': 20, 'M5': 20,
-          'J1':20, 'J2': 20, 'J3': 20,
+          'J1':10, 'J2': 10, 'J3': 10,
           'S1':0, 'S2':0, 'S3':0, 'S4':0}
 
      costs = {('E1','E2'):2,('E2','E3'):3,('E3','E4'):4,('E4','E1'):5,
@@ -20,8 +15,15 @@ def Q1_1():
      def check_consistency(h,node1,node2,cost):
           h_n = h[node1]
           h_nprime = h[node2]
-          if h_n <= h_nprime + cost: return True
-          else: return False
+          if h_n <= h_nprime + cost:
+              return True
+          else:
+              print(h_n)
+              print(h_nprime)
+              print(cost)
+              print(f'h({node1}) <= cost({node1}->{node2}) + h({node2} ? ')
+              print(f'{h_n} <= {cost}+ {h_nprime}')
+              return False
 
      for node_a in nodes:
           for node_b in nodes:
@@ -52,5 +54,5 @@ def Q1_3():
                if not check: print('####NOT ADMISSIBLE FOR',node)
 
 
-#Q1_1()
-Q1_3()
+Q1_1()
+#Q1_3()
